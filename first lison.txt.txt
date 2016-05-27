@@ -1,3 +1,11 @@
+
+
+naming convension:
+1- must start with character a4
+2 a-z,1-9,_,$,#
+3- max size 30 charcter
+
+
 DDL
 1-create (master ->details)
 
@@ -10,9 +18,36 @@ address varchar2(200)
 );
 
 
+insert into customers (cust_no,cust_name,mobile#,dob,address)values
+(1,'mohammad',785181656,2016-5-4 5:6:4 ,'alzrqa');
+
+select * from tab;//show all tqables
+describe customers;// show schema of table
+select * from user_constraints;
+1- we see that for every constraint we have on row
+2- every constraint have name (sys_c879) from oracle auto generate
 
 
-naming convension:
-1- must start with character a4
-2 a-z,1-9,_,$,#
-3- max size 30 charcter
+
+
+
+
+
+
+
+
+
+create table cars(
+car_no number(3) constraint car_pk primary key,
+brand varchar2(100) constraint brand_nn not null,
+subbrand varchar2(100) not null,
+car_model number(4) check (car_model >=2010),
+car_color varchar2(10) check (car_color in ('red','black'))
+);
+
+create table rent(
+car_no  number(3) references cars(car_no),
+cust_no number(5)  constraint cust_fk  references customers(cust_no),
+start_date date not null,
+end_date date,
+price number (5,2));
