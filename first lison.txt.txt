@@ -1,1 +1,18 @@
-sql
+DDL
+1-create (master ->details)
+
+create table customers(
+cust_no number(5) primary key,
+cust_name varchar2(100) unique not null,
+mobile# number(10) unique,
+dob date not null,
+address varchar2(200)
+);
+
+
+
+
+naming convension:
+1- must start with character a4
+2 a-z,1-9,_,$,#
+3- max size 30 charcter
