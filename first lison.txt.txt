@@ -51,3 +51,19 @@ cust_no number(5)  constraint cust_fk  references customers(cust_no),
 start_date date not null,
 end_date date,
 price number (5,2));
+
+
+user_constraints table
+1- owner is the name of schema or user which on it the table for this constraint 
+2- constraint name : is the name for constraint the developer name it or oracle will give it name sys
+note: prefared to name it with meaning so when we have error this name will be display.
+
+3 con = constraint_type 
+p=primary key
+u= uniqe
+c= check and not null
+and to complete the info we have to look to 
+search_condition
+
+r=forign key (reference)
+to complete the info we have to look to r_constraint_name  
